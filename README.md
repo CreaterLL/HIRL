@@ -31,7 +31,7 @@ In conclusion, the main contributions of this paper can be summarized as follows
 
 ### Step 1: Download the project
 
-First of all, download our project `HIRL_project.zip` from [Github](https://github.com/anonymous-hirl/HIRL/project) and unzip the file. The file includes both codes and datasets.
+First of all, download our project `HIRL_project.zip` from [Github](https://github.com/anonymous-hirl/HIRL/tree/main/project) and unzip the file. The file includes both codes and datasets.
 
 ### Step 2: Create the running environment
 
