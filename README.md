@@ -1,7 +1,3 @@
----
-layout: default
----
-
 ## Hierarchical Invariant Learning for Domain Generalization Recommendation
 
 ## 1 Abstract
