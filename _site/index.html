@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Hierarchical Invariant Learning for Domain Generalization Recommendation | This is the official release for HIRL.</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Hierarchical Invariant Learning for Domain Generalization Recommendation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is the official release for HIRL." />
+<meta property="og:description" content="This is the official release for HIRL." />
+<link rel="canonical" href="http://localhost:5003/" />
+<meta property="og:url" content="http://localhost:5003/" />
+<meta property="og:site_name" content="Hierarchical Invariant Learning for Domain Generalization Recommendation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Hierarchical Invariant Learning for Domain Generalization Recommendation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"This is the official release for HIRL.","headline":"Hierarchical Invariant Learning for Domain Generalization Recommendation","name":"Hierarchical Invariant Learning for Domain Generalization Recommendation","url":"http://localhost:5003/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">Hierarchical Invariant Learning for Domain Generalization Recommendation</h1>
+      <h2 class="project-tagline">This is the official release for HIRL.</h2>
+      
+        <a href="https://github.com/anonymous-hirl/HIRL/project" class="btn">Download Project from Github</a>
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h2 id="hierarchical-invariant-learning-for-domain-generalization-recommendation">Hierarchical Invariant Learning for Domain Generalization Recommendation</h2>
+
+<h2 id="1-abstract">1 Abstract</h2>
+
+<p>Domain generalization has been recently becoming an important task in machine learning. However, seldom work discusses the domain generalization task in recommendation systems. In this paper, we intend to figure out the domain generalization recommendation and propose corresponding models to deal with the task. We illustrate the domain generalization recommendation, figure out its pivotal properties, and give a clear symbolized defination on this setting. We demonstrate its strong connection with zero-shot recommendation, pretrained recommendation and cold-start recommendation, and distinguish it from content-based recommendation. Based on its properties, we propose HIRL+ and a series heuristic methods to sovle the task. We propose hierarchical invariant learning, in order to expel the specific patterns in both domain-level and environment-level to find the common patterns in the generalization space. We propose the learnable environment assignment mechnisms to make environments more flexible, fine-grained and balance. We propose an adversarial environment refinement mechnism based on adversarial training to improve the robustenss against distribution shifts inside the domain generalization process. We conduct experiments on real-word datasets to verify the effectiveness of our models, and carry out further studies on domain distance and domain diversity. We intend to open up and discuss the domain generalization recommendation setting with corresponding models, and we publish our project on https://anonymous-hirl.github.io/HIRL.</p>
+
+<h2 id="2-contributions">2 Contributions</h2>
+
+<p>In conclusion, the main contributions of this paper can be summarized as follows:</p>
+
+<ul>
+  <li>
+    <p>We give a clear defination of domain generalization recommendation, which can be considered as a new type of method for cold-start problem, pretrained recommendation problem and zero-shot recommendation problem.</p>
+  </li>
+  <li>
+    <p>We prepose HIRL to obtain more common and significant pattens on more fine-grained environment level. We propose environment assignment mechanism to make environment flexible and learnable. We further improve robustness aginst distribution mismatch by proposing environment refinement mechanism. We combine the three components as HIRL+, which is effective on domian generalization recommendation.</p>
+  </li>
+  <li>
+    <p>We conduct experiments on several datasets to compare our model with baselines, and analyse the results. And we release our project on Github Page.</p>
+  </li>
+</ul>
+
+<h2 id="3-dataset-overview">3 Dataset Overview</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dataset</th>
+      <th>#User</th>
+      <th>#Item</th>
+      <th>#Inter</th>
+      <th>#Domain</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CloudTheme-10</td>
+      <td>61,856</td>
+      <td>23,604</td>
+      <td>99,113</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>CloudTheme-20</td>
+      <td>107,439</td>
+      <td>44,097</td>
+      <td>172,119</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>CloudTheme-50</td>
+      <td>234,444</td>
+      <td>89,386</td>
+      <td>378,641</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>KuaiRec-8</td>
+      <td>6,971</td>
+      <td>3,984</td>
+      <td>113,288</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>KuaiRec-16</td>
+      <td>7,151</td>
+      <td>8,465</td>
+      <td>189,221</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>KuaiRec-all</td>
+      <td>7,166</td>
+      <td>8,809</td>
+      <td>216,784</td>
+      <td>20</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="4-quick-start">4 Quick Start</h2>
+
+<h3 id="step-1-download-the-project">Step 1: Download the project</h3>
+
+<p>First of all, download our project <code class="language-plaintext highlighter-rouge">HIRL_project.zip</code> from <a href="https://github.com/anonymous-hirl/HIRL/project">Github</a> and unzip the file. The file includes both codes and datasets.</p>
+
+<h3 id="step-2-create-the-running-environment">Step 2: Create the running environment</h3>
+
+<p>Create <code class="language-plaintext highlighter-rouge">Python 3.9</code> enviroment and install the packages that the project requires.</p>
+<ul>
+  <li>numpy==1.23.5</li>
+  <li>scikit_learn==1.2.0</li>
+  <li>torch==1.13.0</li>
+</ul>
+
+<p>You can install the packages with the following command.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    pip install -r requirements.txt
+</code></pre></div></div>
+
+<h3 id="step-3-run-the-project">Step 3: Run the project</h3>
+
+<p>Choose a dataset to run (e.g. kuairec_8) and a model (e.g. DNN) to run with the following command.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    python run.py DNN dataset/kuairec_8.pickle DNN_kuairec_8 hidden_dim1 16 hidden_dim2 16 batch_size 1024 lr 0.05 epoch 10 
+</code></pre></div></div>
+
+<p>You can also use <code class="language-plaintext highlighter-rouge">quick_start.py</code> to run the project conveniently.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    python quick_start.py
+</code></pre></div></div>
+
+<p>You can also change the hyper-parameters as you want. The necessary hyper-parameters for each model have been recorded in the <code class="language-plaintext highlighter-rouge">hyper_parameters.py</code>.</p>
+
+<h3 id="step-4-check-the-performance">Step 4: Check the performance</h3>
+
+<p>The performance will be saved in <code class="language-plaintext highlighter-rouge">result</code> dictionary. The first column is the running time. The second column is the name of models. The third to the fourth columns are metrices <code class="language-plaintext highlighter-rouge">NDCG@10, HR@10</code> in order.</p>
+
+<h2 id="5-hyper-parameters-search-range">5 Hyper-parameters search range</h2>
+
+<p>We tune hyper-parameters accordingly, and the common hyper-parameters are presented on the following table.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hyper-parameter</th>
+      <th>Explanation</th>
+      <th>Range</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>embedding_dim</td>
+      <td>dimension of profiles</td>
+      <td>{16, 32, 64, 128}</td>
+    </tr>
+    <tr>
+      <td>hidden_dim1</td>
+      <td>dimension of hidden layer1</td>
+      <td>{16, 32, 64, 128}</td>
+    </tr>
+    <tr>
+      <td>hidden_dim2</td>
+      <td>dimension of hidden layer2</td>
+      <td>{16, 32, 64, 128}</td>
+    </tr>
+    <tr>
+      <td>lr</td>
+      <td>learning rate of model</td>
+      <td>{0.001, 0.01, 0.05, 0.1, 0.2}</td>
+    </tr>
+    <tr>
+      <td>batch_size</td>
+      <td>batch size of model</td>
+      <td>{64, 128, 256, 512, 1024}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>As different base models have different hyper-paramerters to tune, you can view the details in the corresponding model files.</p>
+
+
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
